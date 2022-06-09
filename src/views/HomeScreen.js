@@ -8,10 +8,13 @@ import {
   SafeAreaView,
   Dimensions,
 } from "react-native";
-import { Modalize } from "react-native-modalize";
+import BottomSheet, {
+  BottomSheetView,
+  BottomSheetScrollView,
+} from "@gorhom/bottom-sheet";
+import ItemRow from "../components/ItemRow";
 import Slider from "react-native-app-intro-slider";
 import { styles } from "../../styles/homeScreenStyle";
-import BottomSheet, { BottomSheetView } from "@gorhom/bottom-sheet";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 
 export default function HomeScreen() {
@@ -22,7 +25,7 @@ export default function HomeScreen() {
 
   const [isOpen, setIsOpen] = useState(true);
 
-  const snapPoints = [350];
+  const snapPoints = ["55%", "70%", "95%"];
 
   const handleSheetPress = useCallback((index) => {
     bottomSheetRef.current?.snapToIndex(index);
@@ -70,11 +73,12 @@ export default function HomeScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <GestureHandlerRootView
+    <GestureHandlerRootView style={styles.container}>
+      <SafeAreaView
         style={{
           alignItems: "center",
           width: windowWidth,
+          height: windowHeight,
         }}
       >
         <View style={{ alignItems: "center", marginTop: 15 }}>
@@ -115,23 +119,36 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </View>
 
-        {/* <Modalize ref={modalizeRef} snapPoint={350}>
-          <View>
-            <Text>Hello World!</Text>
-          </View>
-        </Modalize> */}
-
         <BottomSheet
           ref={bottomSheetRef}
           snapPoints={snapPoints}
           enablePanDownToClose={true}
           onClose={() => setIsOpen(false)}
         >
-          <BottomSheetView style={styles.contentContainer}>
-            <Text>Awesome 🎉</Text>
-          </BottomSheetView>
+          <BottomSheetScrollView style={styles.contentContainer}>
+            <ItemRow color="yellow">
+              <View>
+                <Image
+                  source={require("../../assets/ItemSword.png")}
+                  style={{ width: 90, height: 90 }}
+                />
+              </View>
+              <View style={{ marginLeft: 60 }}>
+                <Text
+                  style={{
+                    width: 180,
+                    height: 90,
+                    flexWrap: "wrap",
+                    backgroundColor: "gray",
+                  }}
+                >
+                  AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                </Text>
+              </View>
+            </ItemRow>
+          </BottomSheetScrollView>
         </BottomSheet>
-      </GestureHandlerRootView>
-    </SafeAreaView>
+      </SafeAreaView>
+    </GestureHandlerRootView>
   );
 }

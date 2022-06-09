@@ -1,6 +1,6 @@
 import React from "react";
 import { ImageBackground } from "react-native";
-import AttributeRow from "../components/attributeRow";
+import AttributeRow from "../components/AttributeRow";
 import { styles } from "../../styles/attributeScreenStyle";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
