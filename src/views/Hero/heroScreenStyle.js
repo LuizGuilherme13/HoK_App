@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: "center",
+
     backgroundColor: "#E4E4E7",
   },
 
@@ -28,7 +29,7 @@ export const styles = StyleSheet.create({
 
   contentContainer: {
     flex: 1,
-    backgroundColor: "red",
+    //backgroundColor: "red",
   },
 
   containerItem: {
@@ -44,9 +45,10 @@ export const styles = StyleSheet.create({
     width: 90,
     height: 90,
     alignItems: "center",
+    borderWidth: 2,
     borderRadius: 15,
     justifyContent: "center",
-    backgroundColor: "#1e293b",
+    //backgroundColor: "#1e293b",
   },
 
   containerSubItem: {
@@ -61,8 +63,9 @@ export const styles = StyleSheet.create({
     width: 75,
     height: 80,
     alignItems: "center",
+    borderWidth: 2,
     borderRadius: 15,
     justifyContent: "center",
-    backgroundColor: "#1e293b",
+    //backgroundColor: "#1e293b",
   },
 });

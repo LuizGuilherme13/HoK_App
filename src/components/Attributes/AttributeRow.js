@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, TouchableOpacity, Text } from "react-native";
-import { styles } from "../../styles/attributeRowStyle";
+import { styles } from "./attributeRowStyle";
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 
 export default function AttributeRow(props) {

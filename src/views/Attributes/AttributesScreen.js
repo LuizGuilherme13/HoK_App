@@ -1,7 +1,7 @@
 import React from "react";
 import { ImageBackground } from "react-native";
-import AttributeRow from "../components/AttributeRow";
-import { styles } from "../../styles/attributeScreenStyle";
+import AttributeRow from "../../components/Attributes/AttributeRow";
+import { styles } from "./attributeScreenStyle";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 export default function AttributesScreen() {
